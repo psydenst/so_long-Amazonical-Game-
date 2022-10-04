@@ -1,0 +1,6 @@
+[submodule "libft"]
+	path = libft
+	url = https://github.com/psydenst/libft.git
+[submodule "get_next_line"]
+	path = get_next_line
+	url = https://github.com/psydenst/get_next_line.git
