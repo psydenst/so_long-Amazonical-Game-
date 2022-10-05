@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:32:42 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/04 20:48:23 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:52:25 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,12 @@
 
 void	open_window(t_map *map)
 {
-	printf("print");
-	map->mlx_ptr = mlx_init();
+	upload_imgs(map);
 	map->mlx_win = mlx_new_window(map->mlx_ptr, map->window_width * PIXEL,
 			map->window_height * PIXEL, "Amazonical Game");
-	upload_imgs(map);
-	map->mlx_ptr = map->mlx_ptr;
-	map->mlx_win = map->mlx_ptr;
 	render_map(map);
-	mlx_key_hook(map->mlx_ptr, keyhook_main, &map);
-	// mlx_hook(map->mlx_pt
-	mlx_loop(map->mlx_ptr);
+//	mlx_key_hook(map->mlx_ptr, keyhook_main, &map);
+//	mlx_hook(map->mlx_ptr);
 }
 
 void	upload_imgs(t_map *map)
@@ -44,30 +39,29 @@ void	upload_imgs(t_map *map)
 
 }
 
-void	ft_create_map(int fd)
+void	ft_create_map(int fd, t_map *map)
 {
 	char	*str;
 	char	*joker;
 	int		len;
-	t_map	map;
 
-	map.lines = 0;
+	map->lines = 0;
 	str = NULL;
 	joker = get_next_line(fd);
 	len = ft_strlen(joker);
-	map.window_width = len - 1;
-	map.map = ft_calloc(len + 1, sizeof(char *));
-	if (!map.map)
-		write(1, "Error with map.map", 19);
+	map->window_width = len - 1;
+	map->map = ft_calloc(len + 1, sizeof(char *));
+	if (!map->map)
+		write(1, "Error with map->map", 19);
 	while (1)
 	{
 		str = get_next_line(fd);
 		if (str == NULL)
 			break ;
 		joker = ft_strjoin(joker, str);
-		map.lines++;
+		map->lines++;
 	}
-	ft_validate_count(joker, &map);
+	ft_validate_count(joker, map);
 	free(str);
 }
 

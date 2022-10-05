@@ -39,7 +39,8 @@ int	keyhook_main(int keycode, t_map *map)
 
 int keyhook_esc(t_map *map)
 {
-	exit_func(map, "You have pressed esc");
+	printf("Dei um esc");
+	printf("%i\n", map->img_width);
 	return (0);
 }
 

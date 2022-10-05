@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 22:17:44 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/04 20:35:34 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:49:32 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_map
 // CREATE_MAP.C
 void		open_window(t_map *map);
 void		upload_imgs(t_map *map);
-void		ft_create_map(int fd);
+void		ft_create_map(int fd, t_map *map);
 void		render_map(t_map *map);
 void		ft_validate_count(char *joker, t_map *map);
 

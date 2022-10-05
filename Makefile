@@ -6,7 +6,7 @@ SRC =	src/create_map.c \
 		src/main.c \
 		src/utils.c \
 		src/validate_map.c \
-		src/key_events.c
+		src/key_events.c 
 
 CC = gcc
 SRC_GNL =	${GNL_DIR}/get_next_line.c \
