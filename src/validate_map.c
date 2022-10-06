@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:04:47 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/04 20:20:55 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/06 18:56:24 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,9 @@ int	char_counter(t_map *map)
 			if (map->map[x][y] == 'P')
 			{
 				map->player_x = x;
-				map->player_y = y; 
+				ft_printf("Valeur of player x: %i\n", map->player_x);
+				map->player_y = y;
+				ft_printf("Valeur of player y: %i\n", map->player_y);
 				map->p_count++;
 			}
 			if (map->map[x][y] == 'E')

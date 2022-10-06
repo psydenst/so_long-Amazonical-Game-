@@ -72,12 +72,13 @@ int		ft_is_ber(char *haystack);
 // int			ft_strlen_int(const char *s);
 
 // KEY EVENTS
-int		keyhook_main(int keycode, t_map *map);
-int		keyhook_esc(t_map *map);
+int	keyhook_main(int keycode, t_map *map);
+int	keyhook_esc(t_map *map);
 void	exit_func(t_map *map, const char *str);
 void	exit_images(t_map *map);
 void    exit_window(t_map *map);
 void	free_map(char **map);
-int		close_window(t_map *map);
+int	close_window(t_map *map);
+int     keyhook_w(t_map *map);
 // void	exit_window(t_map *map);
 #endif

@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:32:42 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/05 17:52:25 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:34:57 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	open_window(t_map *map)
 {
 	upload_imgs(map);
 	map->mlx_win = mlx_new_window(map->mlx_ptr, map->window_width * PIXEL,
-			map->window_height * PIXEL, "Amazonical Game");
+			(map->window_height + 1) * PIXEL, "Amazonical Game");
 	render_map(map);
 //	mlx_key_hook(map->mlx_win, keyhook_main, &map);
 //	mlx_hook(map->mlx_ptr);
