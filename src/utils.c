@@ -1,5 +1,5 @@
 #include "../inc/so_long.h"
-
+/*
 int	get_height(fd)
 {
 	int	i;
@@ -25,4 +25,4 @@ int	ft_strlen_int(const char *s)
 		i++;
 	}
 	return (i);
-}
+} */

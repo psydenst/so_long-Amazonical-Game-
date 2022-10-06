@@ -81,6 +81,9 @@ int	char_counter(t_map *map)
 	y = 0;
 	map->p_count = 0;
 	map->e_count = 0;
+	map->c_count = 0;
+	map->player_x = 0;
+	map->player_y = 0;
 	while (map->map[x])
 	{
 		y = 0;
@@ -92,9 +95,15 @@ int	char_counter(t_map *map)
 				&& map->map[x][y] != 'P' && map->map[x][y] != '\n')
 				return (0);
 			if (map->map[x][y] == 'P')
+			{
+				map->player_x = x;
+				map->player_y = y; 
 				map->p_count++;
+			}
 			if (map->map[x][y] == 'E')
 				map->e_count++;
+			if (map->map[x][y] == 'C')
+				map->c_count++;
 			y++;
 		}
 	x++;

@@ -32,22 +32,27 @@ int	keyhook_main(int keycode, t_map *map)
 	// }
 	if (keycode == 53)
 	{
-		keyhook_esc(map);
+		exit_window(map);
 	}
 	return (0);
 }
+/*
+int	keyhook_w(t_map *map)
+{
+
+} */
+
 
 int keyhook_esc(t_map *map)
 {
-	printf("Dei um esc");
-	printf("%i\n", map->img_width);
+        exit_func(map, "You have pressed esc");
 	return (0);
 }
 
-// void	exit_window(t_map *map)
-// {
-// 	mlx_destroy_window(map->mlx_ptr, map->mlx_win);
-// }
+void	exit_window(t_map *map)
+{
+ 	mlx_destroy_window(map->mlx_ptr, map->mlx_win);
+}
 
 int	close_window(t_map *map)
 {

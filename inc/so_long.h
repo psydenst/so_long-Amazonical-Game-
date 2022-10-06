@@ -28,17 +28,9 @@
 # include "../libs/get_next_line/get_next_line.h"
 # include "../mlx/mlx.h"
 
-// typedef struct s_mlx
-// {
-// 	void	*mlx_ptr;
-// 	void	*mlx_win;
-// 	int		window_width;
-// 	int		window_height;
-// } t_mlx;
-
 typedef struct s_map
 {
-	int		lines;
+	int	lines;
 	char	**map;
 	void	*wall;
 	void	*floor;
@@ -48,13 +40,16 @@ typedef struct s_map
 	int     img_width;
 	int     img_height;
 	int     axis_x;
-	int     axis_y;
-	int		p_count;
-	int		e_count;
+	int    	axis_y;
+	int	p_count;
+	int	e_count;
+	int	c_count;
+	int	player_x;
+	int	player_y;
 	void	*mlx_ptr;
 	void	*mlx_win;
-	int		window_width;
-	int		window_height;
+	int	window_width;
+	int	window_height;
 
 } t_map;
 
@@ -81,6 +76,7 @@ int		keyhook_main(int keycode, t_map *map);
 int		keyhook_esc(t_map *map);
 void	exit_func(t_map *map, const char *str);
 void	exit_images(t_map *map);
+void    exit_window(t_map *map);
 void	free_map(char **map);
 int		close_window(t_map *map);
 // void	exit_window(t_map *map);

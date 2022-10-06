@@ -33,13 +33,11 @@ clean:	all
 	   	${RM} ${OBJ}
 
 fclean: clean
-		make fclean -C ${LIBFT_DIR}
-		make fclean -C ./mlx
+		rm  ${LIBFT_DIR}/libft.a
+		rm ${MLX_DIR}/libmlx.a
+		rm ${NAME}
 
-
-		${RM} ${NAME}
-
-re:		fclean all
+re:		clean all
 
 .PHONY: all clean fclean re bonus
 

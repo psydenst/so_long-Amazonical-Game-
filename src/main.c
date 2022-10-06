@@ -32,7 +32,7 @@ int	main(int argc, char *argv[])
 		return (write(1, "Error with map path!\n", 21));
 	map.mlx_ptr = mlx_init();
 	ft_create_map(fd, &map);
-//	mlx_key_hook(map.mlx_ptr, keyhook_main, &map);
+	mlx_key_hook(map.mlx_win, keyhook_main, &map);
+	mlx_hook(map.mlx_win, 17, 0, close_window, &map);
 	mlx_loop(map.mlx_ptr);
-
 }
