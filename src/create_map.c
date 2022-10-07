@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:32:42 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/06 19:34:57 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:39:07 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	open_window(t_map *map)
 	map->mlx_win = mlx_new_window(map->mlx_ptr, map->window_width * PIXEL,
 			(map->window_height + 1) * PIXEL, "Amazonical Game");
 	render_map(map);
-//	mlx_key_hook(map->mlx_win, keyhook_main, &map);
-//	mlx_hook(map->mlx_ptr);
 }
 
 void	upload_imgs(t_map *map)
@@ -36,7 +34,6 @@ void	upload_imgs(t_map *map)
 			&map->img_width, &map->img_height);
 	map->exit = mlx_xpm_file_to_image(map->mlx_ptr, EXIT,
 			&map->img_width, &map->img_height);
-
 }
 
 void	ft_create_map(int fd, t_map *map)
@@ -68,8 +65,6 @@ void	ft_create_map(int fd, t_map *map)
 void	ft_validate_count(char *joker, t_map *map)
 {
 	map->window_height = map->lines;
-	map->axis_x = 0;
-	map->axis_y = 0;
 	map->map = ft_split(joker, '\n');
 	free(joker);
 	if (counter(map) == 1)
@@ -83,7 +78,8 @@ void	ft_validate_count(char *joker, t_map *map)
 
 void	render_map(t_map *map)
 {
-	// coins_and_position(&map);
+	map->axis_x = 0;
+	map->axis_y = 0;
 	while (map->map[map->axis_x] != NULL)
 	{
 		if (map->map[map->axis_x][map->axis_y] == '1')
