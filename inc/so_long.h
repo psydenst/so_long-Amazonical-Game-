@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 22:17:44 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 17:26:48 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:58:32 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,16 @@ int			validate_ber(char *map_name);
 
 // VALIDATE_MAP.C
 int			wall_check(t_map *map);
+int			wall_check2(t_map *map);
 int			counter(t_map *map);
 int			ft_is_rectangle(t_map *map);
+
+// VALIDATE_MAP2.C
+
 int			ft_is_ber(char *haystack);
+void		values(t_map *map);
 int			char_counter(t_map *map);
 int			char_counter2(t_map *map);
-void		values(t_map *map);
-
 
 // KEY_EVENTS.C
 int			keyhook_main(int keycode, t_map *map);
@@ -88,4 +91,5 @@ int			keyhook_d(t_map *map);
 int			keyhook_a(t_map *map);
 int			keyhook_s(t_map *map);
 int			keyhook_esc(t_map *map);
+
 #endif

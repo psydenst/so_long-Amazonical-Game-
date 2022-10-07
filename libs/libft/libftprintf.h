@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:04:14 by psydenst          #+#    #+#             */
-/*   Updated: 2022/09/28 18:12:41 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:08:14 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include "libft.h"
 
-int	    ft_putchar(int c);
+int		ft_putchar(int c);
 int		ft_putstr(char *s);
 int		ft_putnbr(int n);
 int		ft_len_printf(int n);

@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:51:31 by psydenst          #+#    #+#             */
-/*   Updated: 2022/09/12 17:48:07 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 18:06:42 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,3 @@ char	*get_next_line(int fd)
 	save = ft_save_rest(save);
 	return (line);
 }
-
