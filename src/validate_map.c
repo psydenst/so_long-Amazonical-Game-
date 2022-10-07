@@ -6,37 +6,11 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:04:47 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/06 18:56:24 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:27:08 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
-
-int	validate_ber(char *map_name)
-{
-	int		a;
-	int		b;
-	int		x;
-	char	*haystack;
-
-	a = 4;
-	x = 0;
-	if (ft_strlen(map_name) < 5)
-		return (0);
-	b = ft_strlen(map_name) - 4;
-	haystack = malloc(5 * sizeof(char));
-	while (a > 0)
-	{
-		haystack[x] = map_name[b];
-		x++;
-		b++;
-		a--;
-	}
-	if (ft_is_ber(haystack) == 1)
-		return (1);
-	else
-		return (0);
-}
 
 int	ft_is_ber(char *haystack)
 {
@@ -72,43 +46,62 @@ int	counter(t_map *map)
 		return (0);
 }
 
-int	char_counter(t_map *map)
+void	values(t_map *map)
 {
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
 	map->p_count = 0;
 	map->e_count = 0;
 	map->c_count = 0;
 	map->player_x = 0;
 	map->player_y = 0;
-	while (map->map[x])
+	map->counter_x = 0;
+	map->counter_y = 0;
+}
+
+int	char_counter(t_map *map)
+{
+	values(map);
+	while (map->map[map->counter_x])
 	{
-		y = 0;
-		while (map->map[x][y])
+		map->counter_y = 0;
+		while (map->map[map->counter_x][map->counter_y])
 		{
-			if (map->map[x][y] != '1'
-				&& map->map[x][y] != '0'
-				&& map->map[x][y] != 'C' && map->map[x][y] != 'E'
-				&& map->map[x][y] != 'P' && map->map[x][y] != '\n')
+			if (map->map[map->counter_x][map->counter_y] != '1'
+				&& map->map[map->counter_x][map->counter_y] != '0'
+				&& map->map[map->counter_x][map->counter_y] != 'C' && map->map[map->counter_x][map->counter_y] != 'E'
+				&& map->map[map->counter_x][map->counter_y] != 'P' && map->map[map->counter_x][map->counter_y] != '\n')
 				return (0);
-			if (map->map[x][y] == 'P')
+			map->counter_y++;
+		}
+	map->counter_x++;
+	}
+	map->counter_x = 0;
+	map->counter_y = 0;
+	if (char_counter2(map) == 1)
+		return (1);
+	else
+		return (0);
+}
+
+int	char_counter2(t_map *map)
+{
+	while (map->map[map->counter_x])
+	{
+		map->counter_y = 0;
+		while (map->map[map->counter_x][map->counter_y])
+		{
+			if (map->map[map->counter_x][map->counter_y] == 'P')
 			{
-				map->player_x = x;
-				ft_printf("Valeur of player x: %i\n", map->player_x);
-				map->player_y = y;
-				ft_printf("Valeur of player y: %i\n", map->player_y);
+				map->player_x = map->counter_x;
+				map->player_y = map->counter_y;
 				map->p_count++;
 			}
-			if (map->map[x][y] == 'E')
+			if (map->map[map->counter_x][map->counter_y] == 'E')
 				map->e_count++;
-			if (map->map[x][y] == 'C')
+			if (map->map[map->counter_x][map->counter_y] == 'C')
 				map->c_count++;
-			y++;
+			map->counter_y++;
 		}
-	x++;
+	map->counter_x++;
 	}
 	if (map->p_count == 1 && map->e_count == 1)
 		return (1);

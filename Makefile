@@ -3,11 +3,12 @@ LIBFT_DIR = ./libs/libft
 MLX_DIR = ./mlx
 GNL_DIR = ./libs/get_next_line
 SRC =	src/create_map.c \
+		src/create_map2.c \
 		src/main.c \
-		src/utils.c \
 		src/validate_map.c \
 		src/key_events.c \
 		src/asdw.c
+
 
 CC = gcc
 SRC_GNL =	${GNL_DIR}/get_next_line.c \

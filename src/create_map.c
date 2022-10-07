@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:32:42 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 16:39:07 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:51:32 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,39 +73,5 @@ void	ft_validate_count(char *joker, t_map *map)
 	{
 		ft_printf("Invalid map!");
 		exit(0);
-	}
-}
-
-void	render_map(t_map *map)
-{
-	map->axis_x = 0;
-	map->axis_y = 0;
-	while (map->map[map->axis_x] != NULL)
-	{
-		if (map->map[map->axis_x][map->axis_y] == '1')
-		{
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->floor, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->wall, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-		}
-		else if (map->map[map->axis_x][map->axis_y] != '1')
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->floor, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-		if (map->map[map->axis_x][map->axis_y] == 'P')
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->player, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-		if (map->map[map->axis_x][map->axis_y] == 'C')
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->collect, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-		if (map->map[map->axis_x][map->axis_y] == 'E')
-			mlx_put_image_to_window(map->mlx_ptr, map->mlx_win,
-				map->exit, (map->axis_y * PIXEL), (map->axis_x * PIXEL));
-		if (map->map[map->axis_x][map->axis_y] == '\0')
-		{
-			map->axis_x++;
-			map->axis_y = -1;
-		}
-		map->axis_y++;
 	}
 }

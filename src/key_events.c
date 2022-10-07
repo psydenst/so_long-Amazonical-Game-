@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 19:33:22 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 16:23:49 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:58:07 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	keyhook_main(int keycode, t_map *map)
 {
-	 if (keycode == 13)
-	 {
+	if (keycode == 13)
+	{
 		keyhook_w(map);
-	 }
+	}
 	if (keycode == 0)
 	{
 		keyhook_a(map);
@@ -46,9 +46,9 @@ int	close_window(t_map *map)
 void	exit_func(t_map *map, const char *str)
 {
 	ft_printf("%s\n", str);
-	if(map->mlx_win)
+	if (map->mlx_win)
 		mlx_clear_window(map->mlx_ptr, map->mlx_win);
-	if(map->mlx_ptr)
+	if (map->mlx_ptr)
 		mlx_clear_window(map->mlx_ptr, map->mlx_win);
 	exit_images(map);
 	if (map->mlx_win)
@@ -72,18 +72,17 @@ void	exit_images(t_map *map)
 		mlx_destroy_image(map->mlx_ptr, map->player);
 	if (map->exit)
 		mlx_destroy_image(map->mlx_ptr, map->exit);
-
 }
 
 void	free_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(map[i])
+	while (map[i])
 	{
-		free(map[i]);
+		free (map[i]);
 		i++;
 	}
-	free(map);
+	free (map);
 }

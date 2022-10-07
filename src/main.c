@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 17:42:52 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/06 19:34:52 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 16:59:24 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(int argc, char *argv[])
 {
-	int	fd;
-	t_map map;
+	int		fd;
+	t_map	map;
 
 	if (argc != 2)
 	{
@@ -36,5 +36,3 @@ int	main(int argc, char *argv[])
 	mlx_hook(map.mlx_win, 17, 0, close_window, &map);
 	mlx_loop(map.mlx_ptr);
 }
-
-

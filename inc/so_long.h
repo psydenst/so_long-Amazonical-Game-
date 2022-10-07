@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 22:17:44 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 16:36:06 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 17:26:48 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,32 +50,39 @@ typedef struct s_map
 	void	*mlx_win;
 	int		window_width;
 	int		window_height;
+	int		counter_x;
+	int		counter_y;
 }	t_map;
 
 // CREATE_MAP.C
 void		open_window(t_map *map);
 void		upload_imgs(t_map *map);
 void		ft_create_map(int fd, t_map *map);
-void		render_map(t_map *map);
- void    render_map2(t_map *map);
 void		ft_validate_count(char *joker, t_map *map);
 
-// VALIDATE_MAP.C
+// CREATE_MAP2.C
+void		render_map(t_map *map);
+void		render_map2(t_map *map);
 int			validate_ber(char *map_name);
+
+// VALIDATE_MAP.C
 int			wall_check(t_map *map);
-int			char_counter(t_map *map);
 int			counter(t_map *map);
 int			ft_is_rectangle(t_map *map);
 int			ft_is_ber(char *haystack);
+int			char_counter(t_map *map);
+int			char_counter2(t_map *map);
+void		values(t_map *map);
 
-// KEY EVENTS
+
+// KEY_EVENTS.C
 int			keyhook_main(int keycode, t_map *map);
 void		exit_func(t_map *map, const char *str);
 void		exit_images(t_map *map);
 void		free_map(char **map);
 int			close_window(t_map *map);
 
-// CREATE ASDW.C
+// ASDW.C
 int			keyhook_w(t_map *map);
 int			keyhook_d(t_map *map);
 int			keyhook_a(t_map *map);
