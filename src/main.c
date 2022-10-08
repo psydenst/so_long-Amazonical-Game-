@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 17:42:52 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 16:59:24 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 20:24:15 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	main(int argc, char *argv[])
 {
-	int		fd;
 	t_map	map;
 
 	if (argc != 2)
@@ -22,16 +21,17 @@ int	main(int argc, char *argv[])
 		printf("Invalid arguments!");
 		exit (0);
 	}
+	map.map_path = ft_strdup(argv[1]);
 	if (validate_ber(argv[1]) == 0)
 	{
 		ft_printf("Not a .ber");
 		return (0);
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
+	map.fd = open(argv[1], O_RDONLY);
+	if (map.fd < 0)
 		return (write(1, "Error with map path!\n", 21));
 	map.mlx_ptr = mlx_init();
-	ft_create_map(fd, &map);
+	ft_create_map(&map);
 	mlx_key_hook(map.mlx_win, keyhook_main, &map);
 	mlx_hook(map.mlx_win, 17, 0, close_window, &map);
 	mlx_loop(map.mlx_ptr);

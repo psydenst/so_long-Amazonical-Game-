@@ -8,7 +8,8 @@ SRC =	src/create_map.c \
 		src/validate_map.c \
 		src/validate_map2.c \
 		src/key_events.c \
-		src/asdw.c
+		src/asdw.c \
+		src/infestation.c
 
 CC = gcc
 SRC_GNL =	${GNL_DIR}/get_next_line.c \

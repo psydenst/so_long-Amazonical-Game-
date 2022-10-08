@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 22:17:44 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 17:58:32 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 23:11:20 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,16 @@ typedef struct s_map
 	int		window_height;
 	int		counter_x;
 	int		counter_y;
+	int		fd;
+	int		coins_map_cpy;
+	char	*map_path;
+	int 	exit_posible;
 }	t_map;
 
 // CREATE_MAP.C
 void		open_window(t_map *map);
 void		upload_imgs(t_map *map);
-void		ft_create_map(int fd, t_map *map);
+void		ft_create_map(t_map *map);
 void		ft_validate_count(char *joker, t_map *map);
 
 // CREATE_MAP2.C
@@ -71,8 +75,11 @@ int			wall_check2(t_map *map);
 int			counter(t_map *map);
 int			ft_is_rectangle(t_map *map);
 
+// INFESTATION.C
+int			start_infestation(t_map *map);
+void	infestation(t_map *map, int x, int y, char **map_copy);
+void		validate_map_path(t_map *map, char **map_copy);
 // VALIDATE_MAP2.C
-
 int			ft_is_ber(char *haystack);
 void		values(t_map *map);
 int			char_counter(t_map *map);

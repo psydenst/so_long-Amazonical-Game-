@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 17:04:47 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 18:02:07 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 20:08:49 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,15 @@ int	counter(t_map *map)
 			return (0);
 		x++;
 	}
+	// if (char_counter(map) && wall_check(map) && ft_is_rectangle(map))
+	// 	return (1);
 	if (char_counter(map) && wall_check(map) && ft_is_rectangle(map))
-		return (1);
+	{
+		if (start_infestation(map) == 1)
+			return (1);
+		else
+			return (0);
+	}
 	else
 		return (0);
 }

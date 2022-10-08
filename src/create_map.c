@@ -6,7 +6,7 @@
 /*   By: psydenst <psydenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 18:32:42 by psydenst          #+#    #+#             */
-/*   Updated: 2022/10/07 16:51:32 by psydenst         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:42:54 by psydenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	upload_imgs(t_map *map)
 			&map->img_width, &map->img_height);
 }
 
-void	ft_create_map(int fd, t_map *map)
+void	ft_create_map(t_map *map)
 {
 	char	*str;
 	char	*joker;
@@ -44,7 +44,7 @@ void	ft_create_map(int fd, t_map *map)
 
 	map->lines = 0;
 	str = NULL;
-	joker = get_next_line(fd);
+	joker = get_next_line(map->fd);
 	len = ft_strlen(joker);
 	map->window_width = len - 1;
 	map->map = ft_calloc(len + 1, sizeof(char *));
@@ -52,13 +52,14 @@ void	ft_create_map(int fd, t_map *map)
 		write(1, "Error with map->map", 19);
 	while (1)
 	{
-		str = get_next_line(fd);
+		str = get_next_line(map->fd);
 		if (str == NULL)
 			break ;
 		joker = ft_strjoin(joker, str);
 		map->lines++;
 	}
 	free(str);
+	close(map->fd);
 	ft_validate_count(joker, map);
 }
 
