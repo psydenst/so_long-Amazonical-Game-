@@ -26,8 +26,6 @@ int	counter(t_map *map)
 			return (0);
 		x++;
 	}
-	// if (char_counter(map) && wall_check(map) && ft_is_rectangle(map))
-	// 	return (1);
 	if (char_counter(map) && wall_check(map) && ft_is_rectangle(map))
 	{
 		if (start_infestation(map) == 1)

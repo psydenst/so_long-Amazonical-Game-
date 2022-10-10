@@ -88,5 +88,5 @@ int	char_counter2(t_map *map)
 	if (map->p_count == 1 && map->e_count == 1)
 		return (1);
 	else
-		return (0);
+		return (ft_printf("Error\nYour map contains duplicate characters\n"));
 }

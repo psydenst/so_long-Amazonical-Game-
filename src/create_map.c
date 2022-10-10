@@ -49,7 +49,7 @@ void	ft_create_map(t_map *map)
 	map->window_width = len - 1;
 	map->map = ft_calloc(len + 1, sizeof(char *));
 	if (!map->map)
-		write(1, "Error with map->map", 19);
+		ft_printf("Error\nMemory error");
 	while (1)
 	{
 		str = get_next_line(map->fd);
@@ -72,7 +72,7 @@ void	ft_validate_count(char *joker, t_map *map)
 		open_window(map);
 	else
 	{
-		ft_printf("Invalid map!");
+		ft_printf("Error\nInvalid map!");
 		exit(0);
 	}
 }

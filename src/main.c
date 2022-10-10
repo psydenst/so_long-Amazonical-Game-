@@ -18,18 +18,18 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Invalid arguments!");
+		ft_printf("Error\nInvalid arguments!");
 		exit (0);
 	}
 	map.map_path = ft_strdup(argv[1]);
 	if (validate_ber(argv[1]) == 0)
 	{
-		ft_printf("Not a .ber");
+		ft_printf("Error\nNot a .ber");
 		return (0);
 	}
 	map.fd = open(argv[1], O_RDONLY);
 	if (map.fd < 0)
-		return (write(1, "Error with map path!\n", 21));
+		return (ft_printf("Error\n Error with map path!\n"));
 	map.mlx_ptr = mlx_init();
 	ft_create_map(&map);
 	mlx_key_hook(map.mlx_win, keyhook_main, &map);
