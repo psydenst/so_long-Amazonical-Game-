@@ -80,3 +80,53 @@ void	dfs(t_data *s_data, int x, int y, char **map_sol)
 		dfs(s_data, x + 1, y, map_sol);
 	return ;
 }
+
+
+// void	infestation(t_map *map, int x, int y, char **map_copy)
+// {
+// 	if (map_copy[x][y] == '1')
+// 		return ;
+// 	if (map_copy[x][y - 1] == 'E' || map_copy[x][y + 1] == 'E' ||
+// 			map_copy[x - 1][y] == 'E' ||
+// 			map_copy[x + 1][y] == 'E' || map_copy[x][y] == 'E' )
+// 		map->exit_possible++;
+// 	if (map_copy[x][y] != 'P')
+// 		map_copy[x][y] = 'P';
+// 	if (map_copy[x][y - 1] != '1' && map_copy[x][y - 1] != 'E')
+// 		infestation(map, x, y - 1, map_copy);
+// 	if (map_copy[x][y + 1] != '1' && map_copy[x][y + 1] != 'E')
+// 		infestation(map, x, y + 1, map_copy);
+// 	if (map_copy[x - 1][y] != '1' && map_copy[x - 1][y] != 'E')
+// 		infestation(map, x - 1, y, map_copy);
+// 	if (map_copy[x + 1][y] != '1' && map_copy[x + 1][y] != 'E')
+// 		infestation(map, x + 1, y, map_copy);
+//     int i = 0;
+//     while(i < 5)
+//     {
+//         printf("%s", map_copy[i]);
+//         i++;
+//     }
+//     return ;
+// }
+
+// void	validate_map_path(t_map *map, char **map_copy)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = 0;
+// 	if (map->exit_posible != 1)
+// 		exit_func(map, "Error!\n No valid map path...");
+// 	while (map_copy[i] != NULL)
+// 	{
+// 		j = 0;
+// 		while (map_copy[i][j] != '\0')
+// 		{
+// 			if (map_copy[i][j] == 'C')
+// 				exit_func(map, "Error!\n No valid map path...");
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// 	return ;
+// }
