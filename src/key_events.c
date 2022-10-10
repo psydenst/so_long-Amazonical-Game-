@@ -14,26 +14,18 @@
 
 int	keyhook_main(int keycode, t_map *map)
 {
+	if (keycode != 53)
+		map->moves++;
 	if (keycode == 13)
-	{
 		keyhook_w(map);
-	}
 	if (keycode == 0)
-	{
 		keyhook_a(map);
-	}
 	if (keycode == 1)
-	{
 		keyhook_s(map);
-	}
 	if (keycode == 2)
-	{
 		keyhook_d(map);
-	}
 	if (keycode == 53)
-	{
 		keyhook_esc(map);
-	}
 	return (0);
 }
 

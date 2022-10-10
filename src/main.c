@@ -15,7 +15,7 @@
 int	main(int argc, char *argv[])
 {
 	t_map	map;
-
+	map.moves = 0;
 	if (argc != 2)
 	{
 		ft_printf("Error\nInvalid arguments!");

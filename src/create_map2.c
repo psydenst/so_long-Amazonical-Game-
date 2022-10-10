@@ -60,6 +60,8 @@ void	render_map2(t_map *map)
 		}
 		map->axis_y++;
 	}
+	map->moves_str = ft_itoa(map->moves);
+	mlx_string_put(map->mlx_ptr, map->mlx_win, 45, 45, 500, map->moves_str);
 }
 
 int	validate_ber(char *map_name)

@@ -56,6 +56,8 @@ typedef struct s_map
 	int	coins_possible;
 	char	*map_path;
 	int 	exit_possible;
+	int	moves;
+	char*	moves_str;
 }	t_map;
 
 // CREATE_MAP.C
