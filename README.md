@@ -1,10 +1,9 @@
 # so_long
 
-![so long play screen shot](map_00.png)
-This is a small game project from 1337/42school implemented using MiniLibX. The project is inspired by Game Freak's Pokemon Firered.
+This project is a small 2D game with minilibx. You'll learn about textures, sprites and tiles
 
-## Goals
-This project is a very small 2D game. It is built to make you work with textures, sprites. And some very basic gameplay elements.
+![so long play screen shot](map_00.png)
+
 
 ## Getting Started
 ```
@@ -37,10 +36,10 @@ The player’s goal is to collect all collectibles present on the map then escap
 |`S`, `↓`|Move down|
 |`A`, `←`|Move left|
 |`D`, `→`|Move right|
-|`ESC ⎋`|Close the game window|
+|`ESC`, `⎋`|Close the game window|
+
+PS: The game is only configured for macOS :/ , since at 42 we work mostly with Apple machines.  
 
 ## Reference
  * [42Paris/minilibx-linux](https://github.com/42Paris/minilibx-linux)
  * [42Docs/minilibx](https://harm-smits.github.io/42docs/libs/minilibx)
- * [taelee42/mlx_example](https://github.com/taelee42/mlx_example)
- * [pret/Disassembly of Pokémon FireRed and LeafGreen](https://github.com/pret/pokefirered)
